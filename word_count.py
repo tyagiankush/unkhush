@@ -4,17 +4,18 @@ from collections import OrderedDict
 
 except_chars = ['.', '*', '+', '#', '10:30', '?', '#quarantine', '-e', '11:30']
 except_words = ['https', 'U000', '🤣', "U200E"]
-texts = r'C:\Users\atya31\Downloads\Bisht\meenu.txt'
+texts = r'C:\Users\username\Downloads\data\file.txt'
 encoding = 'UTF-8'
+flag = ''  # surname
 
 
-def meenu_bd():
+def get_word_count():
     msg_count, line, text = dict(), list(), ''
     with open(texts, 'r', encoding=encoding) as f:
         s = f.readlines()
     s.pop(0)
     msg_count.get('a')
-    p = re.compile("Bisht: (.+)")
+    p = re.compile("{flag}: (.+)")
     msgs = [re.findall(p, c)[0] for c in s if re.findall(p, c) != []]
     for m in msgs:
         if any(a in m for a in except_words):
@@ -125,5 +126,5 @@ def visualize(text=None):
 
 
 if __name__ == '__main__':
-    data = meenu_bd()
+    data = get_word_count()
     visualize(data)
