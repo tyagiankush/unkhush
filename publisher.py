@@ -11,8 +11,5 @@ def producer():
     producer.flush()
 
 
-
-
-
 if __name__ == '__main__':
     producer()
